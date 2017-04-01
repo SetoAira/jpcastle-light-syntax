@@ -1,0 +1,332 @@
+@import "syntax-variables";
+
+atom-text-editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    border-right: 1px solid @silver;
+    color: @syntax-gutter-text-color;
+    margin-right: .5em;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @japonica;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+atom-text-editor .search-results .syntax--marker .region {
+  background-color: fade(@syntax-result-marker-color, 50%);
+}
+
+atom-text-editor .search-results .syntax--marker.current-result .region {
+  background-color: fade(@syntax-result-marker-color-selected, 50%);
+}
+
+.bracket-matcher .region {
+  border: none;
+  background-color: @dandelion;
+}
+
+// Syntax styles
+
+.syntax--comment {
+  color: @silver;
+}
+
+.syntax--keyword {
+  color: @iris;
+
+  &.syntax--control {
+    color: lighten(@iris, 10%);
+  }
+
+  &.syntax--operator {
+    color: @pole;
+    font-style: italic;
+  }
+
+  &.syntax--other.syntax--special-method {
+    color: lighten(@jew, 10%);
+  }
+
+  &.syntax--other.syntax--unit {
+    color: @pine;
+  }
+}
+
+.syntax--storage {
+  color: @jew;
+}
+
+.syntax--constant {
+  color: lighten(@japonica, 10%);
+
+  &.syntax--language {
+    color: @sky;
+  }
+
+  &.syntax--character.syntax--escape {
+    color: @gold;
+  }
+
+  &.syntax--numeric {
+    color: @jew;
+  }
+
+  &.syntax--other.syntax--color {
+    color: lighten(@jew, 10%);
+  }
+
+  &.syntax--other.syntax--symbol {
+    color: lighten(@pine, 10%);
+  }
+}
+
+.syntax--variable {
+  color: darken(@sky, 10%);
+
+  &.syntax--interpolation {
+    color: @japonica;
+  }
+
+  &.syntax--parameter.syntax--function {
+    color: @syntax-text-color;
+  }
+}
+
+.syntax--invalid.syntax--illegal {
+  background-color: lighten(@japonica, 10%);
+  color: @syntax-background-color;
+}
+
+.syntax--string {
+  color: @japonica;
+
+
+  &.syntax--regexp {
+    color: @gold;
+
+    .syntax--source.syntax--ruby.syntax--embedded {
+      color: lighten(@gold, 10%);
+    }
+  }
+
+  &.syntax--other.syntax--link {
+    color: lighten(@japonica, 10%);
+  }
+}
+
+.syntax--punctuation {
+  &.syntax--definition {
+    &.syntax--comment {
+      color: @silver;
+    }
+
+    &.syntax--string,
+    &.syntax--variable,
+    &.syntax--parameters,
+    &.syntax--array {
+      color: @syntax-text-color;
+    }
+
+    &.syntax--heading,
+    &.syntax--identity {
+      color: darken(@sky, 10%);
+    }
+
+    &.syntax--bold {
+      color: darken(@dandelion, 20%);
+      font-weight: bold;
+    }
+
+    &.syntax--italic {
+      color: @iris;
+      font-style: italic;
+    }
+  }
+
+  &.syntax--section.syntax--embedded {
+    color: @japonica;
+  }
+
+}
+
+.syntax--support {
+  &.syntax--class {
+    color: @pine;
+  }
+
+  &.syntax--function  {
+    color: darken(@sky, 10%);
+
+    &.syntax--any-method {
+      color: darken(@sky, 10%);
+    }
+  }
+
+  &.syntax--type.syntax--property-name{
+    color: @pole;
+  }
+}
+
+.syntax--entity {
+  &.syntax--name.syntax--function {
+    color: @pine;
+  }
+  &.syntax--name.syntax--type {
+    color: @bamboo;
+    text-decoration: underline;
+  }
+
+  &.syntax--other.syntax--inherited-class {
+    color: lighten(@pine, 10%);
+  }
+  &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
+    color: @iris;
+  }
+
+  &.syntax--name.syntax--section {
+    color: darken(@sky, 10%);
+  }
+
+  &.syntax--name.syntax--tag {
+    color: @bamboo;
+  }
+
+  &.syntax--other.syntax--attribute-name {
+    color: @iris;
+
+    &.syntax--id {
+      color: @jew;
+      font-weight: bold;
+    }
+  }
+}
+
+.syntax--meta {
+  &.syntax--class {
+    color: @syntax-text-color;
+  }
+
+  &.syntax--link {
+    color: lighten(@gold, 10%);
+  }
+
+  &.syntax--require {
+    color: @jew;
+  }
+
+  &.syntax--selector {
+    color: @iris;
+  }
+
+  &.syntax--separator {
+    background-color: @silver;
+    color: @syntax-text-color;
+  }
+}
+
+.syntax--none {
+  color: @syntax-text-color;
+}
+
+.syntax--markup {
+  &.syntax--bold {
+    color: @syntax-text-color;
+    font-weight: bold;
+  }
+
+  &.syntax--changed {
+    color: @iris;
+  }
+
+  &.syntax--deleted {
+    color: lighten(@japonica, 10%);
+  }
+
+  &.syntax--italic {
+    color: @syntax-text-color;
+    font-style: italic;
+  }
+
+  &.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+    color: @gold;
+  }
+
+  &.syntax--inserted {
+    color: lighten(@pine, 10%);
+  }
+
+  &.syntax--list {
+    color: lighten(@japonica, 10%);
+  }
+
+  &.syntax--quote {
+    color: @japonica;
+  }
+
+  &.syntax--raw.syntax--inline {
+    color: lighten(@pine, 10%);
+  }
+}
+
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+  &.syntax--heading {
+    color: @gold;
+  }
+}
+
+
+// Mini editor
+
+atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
+
+atom-text-editor, atom-text-editor.editor {
+  .highlight.ideographic-space {
+    .region:after {
+      color: @syntax-invisible-character-color;
+    }
+  }
+}

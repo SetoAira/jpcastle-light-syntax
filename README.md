@@ -2,4 +2,4 @@
 
 A light syntax theme, inspired Japanese castle and its garden.
 
-![screenshot](./screenshot.png)
+![screenshot](https://raw.githubusercontent.com/SetoAira/jpcastle-light-syntax/master/screenshot.png)

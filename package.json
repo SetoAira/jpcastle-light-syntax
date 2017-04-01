@@ -1,13 +1,13 @@
 {
   "name": "JPcastle-light-syntax",
   "theme": "syntax",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A light syntax theme, inspired Japanese castle and its garden.",
   "keywords": [
     "syntax",
     "theme",
-		"light",
-		"japanese"
+    "light",
+    "japanese"
   ],
   "repository": "https://github.com/SetoAira/jpcastle-light-syntax",
   "license": "MIT",
